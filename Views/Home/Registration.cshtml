@@ -1,0 +1,31 @@
+@model ProfessionalNetwork.Models.UserViewValidation
+
+<h1>Login Registration</h1>
+<fieldset id = "Registration">
+    <legend> Registration </legend>
+<form asp-controller="Home" asp-action="Register" method="post">
+    
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+    
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email"></span>
+    
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    <span asp-validation-for="Password"></span>
+
+    <label asp-for="ConfirmationPassword"></label>
+    <input asp-for="ConfirmationPassword"/>
+    <span asp-validation-for="ConfirmationPassword"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/>
+    <span asp-validation-for="Description"></span>
+    
+    <button type="submit">Register</button>
+</form>
+</fieldset>

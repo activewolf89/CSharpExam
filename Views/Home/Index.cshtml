@@ -1,0 +1,8 @@
+@{
+    ViewData["Title"] = "Home Page";
+    @using ProfessionalNetwork.Models
+}
+@Html.Partial("Registration")
+@Html.Partial("Login")
+<h2>@ViewData["UserExists"]</h2>
+<h2> @ViewData["EmailPasswordComboFail"] </h2>

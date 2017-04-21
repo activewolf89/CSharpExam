@@ -1,0 +1,41 @@
+<a href = "/professional_profile"> My Profile </a> | <a href = "/logout">Logout </a> 
+@{
+    @using ProfessionalNetwork.Models
+}
+<h1> Users you may want to connect with: </h1> 
+<div>
+    <table> 
+        <tr> 
+            <th> Name </th>
+            <th> Action </th> 
+        </tr> 
+
+        @foreach(User aUser in @ViewBag.userListNotConnected)
+        {
+            bool show = true;
+                @if(@ViewBag.loggedUser == @aUser.UserId)
+                {
+                    show = false;
+                }
+            @foreach(Network connectedNetwork in @ViewBag.loggedUserInfo.Networks)
+            {
+                @if(@aUser.UserId == @connectedNetwork.UserConnectedId)
+                {
+                    show = false;
+                }
+                @if(@connectedNetwork.Status == "Accepted")
+                {
+                    show = false;
+                }
+            }
+            <tr>
+                @if(show)
+                {
+                    <td> <a href = "/users/@aUser.UserId"> @aUser.Name </a> </td> 
+                    <td> <a href = "/connect/@aUser.UserId">Connect </a> </td>
+                } 
+            </tr> 
+            
+        }
+    </table> 
+</div> 

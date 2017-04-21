@@ -1,0 +1,61 @@
+/*Write all of your CSS here*/
+/*Write all of your CSS here*/
+span{
+    color:red;
+    display:inline-block;
+}
+label,button{
+    display:block;
+}
+#Registration{
+    display:inline-block;
+}
+#Login{
+    display:inline-block;
+    vertical-align: top;
+    
+}
+#user_description{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 30px;
+
+}
+#user_network{
+    border: 1px solid black;
+    display: inline-block;
+
+    padding: 30px;
+}
+#user_invitations{
+    border: 1px solid black;
+    display: inline-block;
+
+    padding: 30px;
+}
+table{
+border: 1px solid black;
+padding: 0;
+border-collapse: collapse;
+position: relative;
+left: 20px;
+top: 20px;
+margin:20px,0,0,20px;
+}
+td{
+/*border: 1px solid black;*/
+padding: 5px;
+margin:0;
+border-left: 1px solid black;
+border-right: 1px solid black;
+}
+th{
+/*border: 1px solid black;*/
+padding: 5px;
+margin:0;
+border-left: 1px solid black;
+border-right: 1px solid black;
+background-color: silver;
+}
+tr:nth-child(even) {background: #EEE}
+tr:nth-child(odd) {background: #FFF}

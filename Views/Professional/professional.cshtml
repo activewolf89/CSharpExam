@@ -1,0 +1,44 @@
+<h1> Welcome @ViewData["FirstName"]</h1> 
+<p> <a href = "/users">All Users </a> | <a href = "/logout"> Logout </a> </p>
+<h4> Here is your profile description: </h4> 
+<div id = "user_description"> 
+@{
+    @using ProfessionalNetwork.Models
+}
+        <p> @ViewBag.userInfo.Description </p> 
+    </div> 
+
+    <h4> Your Professional Network </h4> 
+<div id = "user_network">
+    @foreach(Network aNetwork in @ViewBag.myUserNetworkList)
+    {
+            @if(aNetwork.Status == "Accepted")
+            {
+                    <p> <a href = "/users/@aNetwork.User.UserId"> @aNetwork.User.Name </a></p>
+
+            }
+    }
+
+</div> 
+<br>
+<div id = "user_invitations">
+    <h4> Invitations </h4> 
+    <h6> The following people asked to be apart of their network </h6> 
+    <table> 
+        <tr> 
+            <th> Name </th>
+            <th> Action </th> 
+        </tr> 
+        @foreach(Network aNetwork in @ViewBag.myUserNetworkList)
+        {
+            @if(aNetwork.Status == "Pending")
+            {
+                <tr>
+                    <td> <a href = "/users/@aNetwork.User.UserId"> @aNetwork.User.Name </a> </td>
+                    <td> <a href = "/accept/@aNetwork.NetworkId"> Accept </a> || <a href = "/ignore/@aNetwork.NetworkId"> Ignore</td> 
+                </tr> 
+
+            }
+        }
+    </table> 
+</div> 
